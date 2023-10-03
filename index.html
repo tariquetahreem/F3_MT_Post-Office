@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Office App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <!-- landing page -->
+    <div class="landingPage" id="landingPage">
+        <section class="leftBox">
+            <h1>Post Office Application</h1>
+            <p>This Application Allows you to extract information about the nearest Post Offices, based on your
+                location.</p>
+            <div class="imageSection">
+                <img src="./clipart.png" alt="banner clipart">
+            </div>
+        </section>
+        <section class="rightBox">
+            <h2>Your Current IP Address is <span id="ipAddress"></span></h2>
+            <button id="fetchBtn" class="disabled" disabled="true">Get Started</button>
+        </section>
+    </div>
+
+    <!-- display location page -->
+    <div class="displayLocationPage inactive" id="displayLocationPage">
+        <section class="ipDetail">
+            <h2>IP Address : <b><span id="ipAddressBar"></span></b></h2>
+            <div class="locationFlex">
+                <div class="leftBox flexDiv">
+                    <p>Lat &nbsp;&nbsp; : <b><span id="lats"></span></b></p>
+                    <p>Long : <b><span id="long"></span></b></p>
+                </div>
+
+                <div class="middleBox flexDiv">
+                    <p>City &nbsp;&nbsp; &nbsp; : <b><span id="city"></span></b></p>
+                    <p>Region : <b><span id="region"></span></b></p>
+                </div>
+                <div class="rightBox flexDiv">
+                    <p>Organisation : <b><span id="organisation"></span></b></p>
+                    <p>Hostname &nbsp;&nbsp;&nbsp;&nbsp;: <b><span id="hostname"></span></b></p>
+                </div>
+            </div>
+        </section>
+        <section class="mapSection">
+            <h1> <span class="material-symbols-outlined">person_pin_circle</span> Your Current Location</h1>
+            <div class="mapDiv" id="mapDiv"></div>
+        </section>
+        <section class="moreInfoSection">
+            <h1>More Information About You</h1>
+            <p>Time Zone : <span id="timeZone"></span></p>
+            <p>Date & Time : <span id="dateTime"></span></p>
+            <p>PIN Code : <span id="pincode"></span></p>
+            <p>Message : <span id="message"></span></p>
+            <br>
+
+            <h1><span class="material-symbols-outlined">apartment</span> Post Offices Near You</h1>
+
+            <!-- search bar -->
+            <div class="searchBar">
+                <span class="material-symbols-outlined serchIcon">search</span>
+                <input type="text" name="searchInput" onkeypress="searchFunction()" id="searchInput">
+            </div>
+
+            <!-- card section -->
+            <div class="cardsGrid" id="cardsGrid">
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
